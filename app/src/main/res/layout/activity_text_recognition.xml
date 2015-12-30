@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.rapidocr.root.textocr.TextRecognition"
+    android:background="#FFFFFF">
+
+    <include
+        layout="@layout/app_bar"
+        android:id="@+id/app_bar"/>
+
+    <EditText
+        android:id="@+id/field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/text_hint"
+        android:layout_below="@+id/app_bar"
+        android:textColor="#444"
+        android:textCursorDrawable="@drawable/color_cursor"/>
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="fill_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:background="#ff4a148c"-->
+    <!--android:orientation="horizontal"-->
+    <!--android:padding="15dp">-->
+
+    <!--<ImageButton-->
+    <!--android:id="@+id/button"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center"-->
+    <!--android:layout_weight="1"-->
+    <!--android:background="@android:color/transparent"-->
+    <!--android:src="@drawable/history"-->
+    <!--/>-->
+    <!--<ImageButton-->
+    <!--android:id="@+id/selectButton"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center"-->
+    <!--android:layout_weight="1"-->
+    <!--android:background="@android:color/transparent"-->
+    <!--android:src="@drawable/camera"-->
+    <!--/>-->
+    <!--<ImageButton-->
+    <!--android:id="@+id/ocrRecognition"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center"-->
+    <!--android:layout_weight="1"-->
+    <!--android:background="@android:color/transparent"-->
+    <!--android:src="@drawable/icon_ocr"-->
+    <!--/>-->
+
+    <!--</LinearLayout>-->
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnSelectImage"
+        android:src="@drawable/gallery_icon"
+        android:layout_above="@+id/field"
+        android:background="#444a148c"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="9dp"
+        android:layout_marginBottom="10dp"/>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnCamera"
+        android:src="@drawable/camera_ocr"
+        android:background="#444a148c"
+        android:layout_alignBottom="@+id/btnSelectImage"
+        android:layout_toLeftOf="@+id/btnSelectImage"
+        android:layout_toStartOf="@+id/btnSelectImage"
+        android:layout_marginRight="9dp"/>
+</RelativeLayout>

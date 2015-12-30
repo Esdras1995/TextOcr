@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Scan pam</string>
+    <string name="activity_ocr_name">Extract text</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello">Hello World, DatumDroidOCRActivity!</string>
+    <string name="button_text">Camera</string>
+    <string name="text_hint">OCRed Text will appear here</string>
+    <string name="title_activity_text_recognition">TextRecognition</string>
+</resources>
