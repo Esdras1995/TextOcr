@@ -1,33 +1,46 @@
-<?xml version="1.0" encoding="utf-8"?><manifest xmlns:android="http://schemas.android.com/apk/res/android"
-package="com.rapidocr.root.textocr">
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.rapidocr.root.textocr">
 
-<application android:allowBackup="true" android:icon="@mipmap/ic_launcher" android:label="@string/app_name"
-    android:supportsRtl="true" android:theme="@style/AppTheme">
-    <activity android:name=".MainActivity" android:label="@string/app_name">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+    <!-- Added android camera permission -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-    </activity>
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
 
-    <!--<activity android:name=".TextRecognition" android:label="@string/activity_ocr_name"></activity>-->
-    <activity
-        android:name="com.rapidocr.root.textocr.TextRecognition"
-        android:label="@string/title_activity_text_recognition">
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value="com.rapidocr.root.textocr.MainActivity"/>
-    </activity>
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-</application>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
-<!-- Added android camera permission -->
-<uses-permission android:name="android.permission.CAMERA" />
-<uses-permission android:name="android.permission.FLASHLIGHT" />
-<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+        <!-- <activity android:name=".TextRecognition" android:label="@string/activity_ocr_name"></activity> -->
+        <activity
+            android:name=".TextRecognition"
+            android:label="@string/title_activity_text_recognition">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.rapidocr.root.textocr.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ScanText"
+            android:label="@string/title_activity_scan_text"></activity>
+    </application>
 
-<uses-feature android:name="android.hardware.camera" android:required="false" />
-<uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
 </manifest>
-

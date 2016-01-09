@@ -14,6 +14,7 @@ public class MainActivity extends ActionBarActivity {
 
     private Toolbar toolbar;
     private ImageButton ocrRecognition;
+    private ImageButton scanBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,8 +24,10 @@ public class MainActivity extends ActionBarActivity {
         setSupportActionBar(toolbar);
 
         final Intent intentTextRecognition = new Intent(this, TextRecognition.class);
+        final Intent intentScan = new Intent(this, ScanText.class);
 
         ocrRecognition = (ImageButton)findViewById(R.id.ocrRecognition);
+        scanBtn = (ImageButton)findViewById(R.id.scanBtn);
         ocrRecognition.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -32,6 +35,12 @@ public class MainActivity extends ActionBarActivity {
             }
         });
 
+        scanBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(intentScan);
+            }
+        });
     }
 
     @Override

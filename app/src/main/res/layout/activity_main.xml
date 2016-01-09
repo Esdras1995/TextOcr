@@ -19,7 +19,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="#ff4a148c"
+        android:background="#ff9c27b0"
         android:orientation="horizontal"
         android:padding="15dp">
 
@@ -33,7 +33,7 @@
             android:src="@drawable/history"
             />
         <ImageButton
-            android:id="@+id/selectButton"
+            android:id="@+id/scanBtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

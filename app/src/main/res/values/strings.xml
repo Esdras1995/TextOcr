@@ -6,4 +6,5 @@
     <string name="button_text">Camera</string>
     <string name="text_hint">OCRed Text will appear here</string>
     <string name="title_activity_text_recognition">TextRecognition</string>
+    <string name="title_activity_scan_text">ScanText</string>
 </resources>
