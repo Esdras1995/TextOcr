@@ -39,6 +39,7 @@ public class ScanFragment extends Fragment {
     private ProgressDialogFragment progressDialogFragment;
     private IScanner scanner;
     private Bitmap original;
+    private int action;
 
     @Override
     public void onAttach(Activity activity) {
@@ -151,6 +152,11 @@ public class ScanFragment extends Fragment {
     }
 
     private class ScanButtonClickListener implements View.OnClickListener {
+//        private int action;
+//        public ScanButtonClickListener(int action){
+//            this.action = action;
+//        }
+
         @Override
         public void onClick(View v) {
             Map<Integer, PointF> points = polygonView.getPoints();

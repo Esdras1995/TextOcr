@@ -27,6 +27,7 @@ public class ScanText extends ActionBarActivity {
     private Button cameraButton;
     private Button mediaButton;
     private ImageView scannedImageView;
+    private final static int SCAN = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +66,7 @@ public class ScanText extends ActionBarActivity {
     protected void startScan(int preference) {
         Intent intent = new Intent(this, ScanActivity.class);
         intent.putExtra(ScanConstants.OPEN_INTENT_PREFERENCE, preference);
+        intent.putExtra(ScanConstants.SCAN, 1);
         startActivityForResult(intent, REQUEST_CODE);
     }
 

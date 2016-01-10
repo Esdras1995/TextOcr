@@ -2096,7 +2096,7 @@ public class Imgproc {
      *                    <li> <code>Nx2</code> numpy array (Python interface)
      *                    <li> <code>CvSeq</code> or <code> </code>CvMat" (C interface)
      *                    </ul>
-     * @param approxCurve Result of the approximation. The type should match the
+     * @param approxCurve ResultImageCroped of the approximation. The type should match the
      *                    type of the input curve. In case of C interface the approximated curve is
      *                    stored in the memory storage and pointer to it is returned.
      * @param epsilon     Parameter specifying the approximation accuracy. This is the

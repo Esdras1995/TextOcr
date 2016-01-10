@@ -1,6 +1,7 @@
 package com.scanlibrary;
 
 import android.app.Activity;
+import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -33,6 +34,10 @@ public class ScanActivity extends Activity implements IScanner {
         return getIntent().getIntExtra(ScanConstants.OPEN_INTENT_PREFERENCE, 0);
     }
 
+    private int getAction() {
+        return getIntent().getIntExtra(ScanConstants.SCAN, 0);
+    }
+
     @Override
     public void onBitmapSelect(Uri uri) {
         ScanFragment fragment = new ScanFragment();
@@ -48,15 +53,24 @@ public class ScanActivity extends Activity implements IScanner {
 
     @Override
     public void onScanFinish(Uri uri) {
-        ResultFragment fragment = new ResultFragment();
-        Bundle bundle = new Bundle();
-        bundle.putParcelable(ScanConstants.SCANNED_RESULT, uri);
-        fragment.setArguments(bundle);
-        android.app.FragmentManager fragmentManager = getFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.add(R.id.content, fragment);
-        fragmentTransaction.addToBackStack(ResultFragment.class.toString());
-        fragmentTransaction.commit();
+        Fragment fragment = null;
+
+        if(getAction() == 1) {
+            fragment = new ResultFragment();
+        } else {
+            fragment = new ResultImageCroped();
+        }
+
+        if(fragment != null){
+            Bundle bundle = new Bundle();
+            bundle.putParcelable(ScanConstants.SCANNED_RESULT, uri);
+            fragment.setArguments(bundle);
+            android.app.FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.add(R.id.content, fragment);
+            fragmentTransaction.addToBackStack(ResultFragment.class.toString());
+            fragmentTransaction.commit();
+        }
     }
 
     public native Bitmap getScannedBitmap(Bitmap bitmap, float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4);
